@@ -5,113 +5,6 @@ void main() {
   runApp(MyApp());
 }
 
-// class MyApp extends StatelessWidget {
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         // This is the theme of your application.
-//         //
-//         // Try running your application with "flutter run". You'll see the
-//         // application has a blue toolbar. Then, without quitting the app, try
-//         // changing the primarySwatch below to Colors.green and then invoke
-//         // "hot reload" (press "r" in the console where you ran "flutter run",
-//         // or simply save your changes to "hot reload" in a Flutter IDE).
-//         // Notice that the counter didn't reset back to zero; the application
-//         // is not restarted.
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: MyHomePage(title: 'Flutter Demo Home Page'),
-//     );
-//   }
-// }
-
-// class MyHomePage extends StatefulWidget {
-//   MyHomePage({Key? key, required this.title}) : super(key: key);
-//
-//   // This widget is the home page of your application. It is stateful, meaning
-//   // that it has a State object (defined below) that contains fields that affect
-//   // how it looks.
-//
-//   // This class is the configuration for the state. It holds the values (in this
-//   // case the title) provided by the parent (in this case the App widget) and
-//   // used by the build method of the State. Fields in a Widget subclass are
-//   // always marked "final".
-//
-//   final String title;
-//
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-//   int _counter = 0;
-//
-//   void _incrementCounter() {
-//     setState(() {
-//       // This call to setState tells the Flutter framework that something has
-//       // changed in this State, which causes it to rerun the build method below
-//       // so that the display can reflect the updated values. If we changed
-//       // _counter without calling setState(), then the build method would not be
-//       // called again, and so nothing would appear to happen.
-//       _counter++;
-//     });
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     // This method is rerun every time setState is called, for instance as done
-//     // by the _incrementCounter method above.
-//     //
-//     // The Flutter framework has been optimized to make rerunning build methods
-//     // fast, so that you can just rebuild anything that needs updating rather
-//     // than having to individually change instances of widgets.
-//     return Scaffold(
-//       appBar: AppBar(
-//         // Here we take the value from the MyHomePage object that was created by
-//         // the App.build method, and use it to set our appbar title.
-//         title: Text(widget.title),
-//       ),
-//       body: Center(
-//         // Center is a layout widget. It takes a single child and positions it
-//         // in the middle of the parent.
-//         child: Column(
-//           // Column is also a layout widget. It takes a list of children and
-//           // arranges them vertically. By default, it sizes itself to fit its
-//           // children horizontally, and tries to be as tall as its parent.
-//           //
-//           // Invoke "debug painting" (press "p" in the console, choose the
-//           // "Toggle Debug Paint" action from the Flutter Inspector in Android
-//           // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-//           // to see the wireframe for each widget.
-//           //
-//           // Column has various properties to control how it sizes itself and
-//           // how it positions its children. Here we use mainAxisAlignment to
-//           // center the children vertically; the main axis here is the vertical
-//           // axis because Columns are vertical (the cross axis would be
-//           // horizontal).
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             Text(
-//               'You have pushed the button this many times:',
-//             ),
-//             Text(
-//               '$_counter',
-//               style: Theme.of(context).textTheme.headline4,
-//             ),
-//           ],
-//         ),
-//       ),
-//       // floatingActionButton: FloatingActionButton(
-//       //   onPressed: _incrementCounter,
-//       //   tooltip: 'Increment',
-//       //   child: Icon(Icons.add),
-//       // ), // This trailing comma makes auto-formatting nicer for build methods.
-//     );
-//   }
-// }
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -164,10 +57,6 @@ class ProfileAvaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        // border: BoxBorder(),
-      ),
       child: Column(
         children: <Widget>[
           Stack(
@@ -175,7 +64,6 @@ class ProfileAvaPage extends StatelessWidget {
             children: <Widget>[
               CircleAvatar(
                 backgroundImage: AssetImage('assets/images/tiana_ava.jpg'),
-                // AssetImage('images/pic.jpg'),
                 radius: 59,
               ),
               FloatingActionButton(
@@ -188,21 +76,20 @@ class ProfileAvaPage extends StatelessWidget {
             "Tiana Rosser",
             textDirection: TextDirection.ltr, // текст слева направо
             textAlign: TextAlign.center, // выравнивание по центру
+            // font:
             style: TextStyle(
-                color: Colors.green, // зеленый цвет текста
-                fontSize: 14, // высота шрифта 26
-                backgroundColor: Colors.black87 // черный цвет фона текста
-                ),
+              color: Colors.black, // зеленый цвет текста
+              fontSize: 16, // высота шрифта 26
+            ),
           ),
           Text(
             "developer",
             textDirection: TextDirection.ltr, // текст слева направо
             textAlign: TextAlign.center, // выравнивание по центру
             style: TextStyle(
-                color: Colors.green, // зеленый цвет текста
-                fontSize: 14, // высота шрифта 26
-                backgroundColor: Colors.black87 // черный цвет фона текста
-                ),
+              color: Colors.black, // зеленый цвет текста
+              fontSize: 12, // высота шрифта 26
+            ),
           ),
         ],
       ),
@@ -215,28 +102,67 @@ class ProfileSelectType extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Column(children: <Widget>[
-      Text("Select type"),
+      Container(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          "Select type",
+          style: TextStyle(
+            color: Colors.black, // зеленый цвет текста
+            fontSize: 16, // высота шрифта 26
+          ),
+        ),
+      ),
       SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(children: <Widget>[
           TextButton(
-            child: Text("Black"),
+            child: Text(
+              "Black",
+              style: TextStyle(
+                color: Colors.black, // зеленый цвет текста
+                fontSize: 14, // высота шрифта 26
+              ),
+            ),
             onPressed: () {},
           ),
           TextButton(
-            child: Text("Bold"),
+            child: Text(
+              "Bold",
+              style: TextStyle(
+                color: Colors.black, // зеленый цвет текста
+                fontSize: 14, // высота шрифта 26
+              ),
+            ),
             onPressed: () {},
           ),
           TextButton(
-            child: Text("Medium"),
+            child: Text(
+              "Medium",
+              style: TextStyle(
+                color: Colors.black, // зеленый цвет текста
+                fontSize: 14, // высота шрифта 26
+              ),
+            ),
             onPressed: () {},
           ),
           TextButton(
-            child: Text("Regular"),
+            child: Text(
+              "Regular",
+              style: TextStyle(
+                color: Colors.black, // зеленый цвет текста
+                fontSize: 14, // высота шрифта 26
+              ),
+            ),
             onPressed: () {},
           ),
           TextButton(
-            child: Text("Light"),
+            child: Text(
+              "Light",
+              style: TextStyle(
+                color: Colors.black, // зеленый цвет текста
+                fontSize: 14, // высота шрифта 26
+              ),
+            ),
             onPressed: () {},
           ),
         ]),
@@ -251,21 +177,43 @@ class ProfileFriends extends StatelessWidget {
     // TODO: implement build
     return Column(
       children: <Widget>[
-        Text("Friends"),
+        Container(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            "Friends",
+            style: TextStyle(
+              color: Colors.black, // зеленый цвет текста
+              fontSize: 16, // высота шрифта 26
+            ),
+          ),
+        ),
         ListView.builder(
-          // padding: const EdgeInsets.all(8),
+          physics: NeverScrollableScrollPhysics(),
           itemCount: users.length,
           itemBuilder: (BuildContext context, int index) {
-            return ProfileFriendItem(
-              ava: Image.asset(users[index].ava),
-              name: users[index].name,
-              profession: users[index].profession,
+            return Material(
+              child: ProfileFriendItem(
+                ava: users[index].ava,
+                name: users[index].name,
+                profession: users[index].profession,
+              ),
             );
           },
           shrinkWrap: true,
         ),
         TextButton(
-          child: Text("ADD FRIEND"),
+          child: Row(
+            children: <Widget>[
+              Text(
+                "ADD FRIEND",
+                style: TextStyle(
+                  color: Colors.black, // зеленый цвет текста
+                  fontSize: 14, // высота шрифта 26
+                ),
+              ),
+              Icon(Icons.add),
+            ],
+          ),
           onPressed: () {},
         ),
       ],
@@ -274,33 +222,44 @@ class ProfileFriends extends StatelessWidget {
 }
 
 class ProfileFriendItem extends StatelessWidget {
-  late Image ava;
+  String ava;
   String name;
   String profession;
   double size;
+  Image? avaImage;
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Column(children: <Widget>[
-      Container(
-        child: ava,
-        width: size,
-        height: size,
-      ),
-      Text(name),
-      Text(profession),
-    ]);
+    avaImage = Image.asset(ava);
+    return
+        //   Column(children: <Widget>[
+        //   Container(
+        //     child: ava,
+        //     width: size,
+        //     height: size,
+        //   ),
+        //   Text(name),
+        //   Text(profession),
+        // ]);
+        ListTile(
+      leading: avaImage ?? Image.asset('assets/images/unknown_person.jpg'),
+      title: Text(name),
+      subtitle: Text(profession),
+      trailing: Icon(Icons.close),
+      onTap: () {},
+    );
   }
 
   ProfileFriendItem({
-    Image? ava,
+    this.ava = "",
     this.name = "",
     this.profession = "",
     this.size = 50,
-  }) {
-    this.ava = ava ?? Image.asset('assets/images/unknown_person.jpg');
-  }
+  });
+  // {
+  //   this.ava = ava ?? Image.asset('assets/images/unknown_person.jpg');
+  // }
 }
 
 class ProfileMedia extends StatelessWidget {
@@ -309,8 +268,18 @@ class ProfileMedia extends StatelessWidget {
     // TODO: implement build
     return Column(
       children: <Widget>[
-        Text("My media"),
+        Container(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            "My media",
+            style: TextStyle(
+              color: Colors.black, // зеленый цвет текста
+              fontSize: 24, // высота шрифта 26
+            ),
+          ),
+        ),
         GridView(
+          physics: NeverScrollableScrollPhysics(),
           children: _buildGridTileList(9),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
@@ -321,11 +290,23 @@ class ProfileMedia extends StatelessWidget {
           children: <Widget>[
             TextButton(
               onPressed: () {},
-              child: Text('Delete'),
+              child: Text(
+                'DELETE',
+                style: TextStyle(
+                  color: Colors.black, // зеленый цвет текста
+                  fontSize: 14, // высота шрифта 26
+                ),
+              ),
             ),
             TextButton(
               onPressed: () {},
-              child: Text('Add'),
+              child: Text(
+                'ADD',
+                style: TextStyle(
+                  color: Colors.black, // зеленый цвет текста
+                  fontSize: 14, // высота шрифта 26
+                ),
+              ),
             ),
           ],
         )
@@ -334,17 +315,34 @@ class ProfileMedia extends StatelessWidget {
   }
 
   List<Container> _buildGridTileList(int count) => List.generate(
-      count, (i) => Container(child: Image.asset('assets/images/media/media-0${i+1}.jpg')));
-  // assets\images\media
-  // assets\images\media
-}
-
-class ProfileActionButtons extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
+        count,
+        (i) => Container(
+          width: 96.62,
+          height: 96.62,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/images/media/media-0${i + 1}.jpg'),
+            ),
+          ),
+          child: Stack(children: <Widget>[
+            SizedBox(
+              width: 24,
+              height: 24,
+              child: FloatingActionButton(
+                backgroundColor: Colors.red[200],
+                child: Icon(
+                  Icons.close,
+                  size: 8,
+                ),
+                shape: StadiumBorder(
+                    side: BorderSide(color: Colors.white, width: 1.5)),
+                onPressed: () {},
+              ),
+            ),
+          ]),
+        ),
+      );
 }
 
 class User {
